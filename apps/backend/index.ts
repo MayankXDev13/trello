@@ -1,23 +1,27 @@
-import express, { type Application, type Request, type Response } from "express";
-import { db } from "./db/db";
-import { users } from "./db/schema";
-
+import express, {
+  type Application,
+  type Request,
+  type Response,
+} from "express";
+import { db, users } from "@repo/db";
 
 const app: Application = express();
 const PORT = process.env.PORT || 3000;
 
-
 app.use(express.json());
 
 app.post("/api/signup", async (req: Request, res: Response) => {
-  const { username, email,password } = req.body;
+  const { username, email, password } = req.body;
 
   try {
-    const user = await db.insert(users).values({
-      email: email,
-      username: username,
-      password: password,
-    }).returning();
+    const user = await db
+      .insert(users)
+      .values({
+        email: email,
+        username: username,
+        password: password,
+      })
+      .returning();
 
     res.status(201).json(user);
   } catch (error) {
@@ -29,5 +33,3 @@ app.post("/api/signup", async (req: Request, res: Response) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-
