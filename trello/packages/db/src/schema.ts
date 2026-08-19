@@ -26,7 +26,7 @@ export const users = pgTable("users", {
 export const organizations = pgTable("organizations", {
   id: uuid("id").defaultRandom().primaryKey(),
 
-  name: text("name").notNull().unique(),
+  name: text("name").notNull(),
   description: text("description"),
 
   createdAt: timestamp("created_at").defaultNow().notNull(),
@@ -146,6 +146,7 @@ export const issueUsers = pgTable(
       .references(() => users.id, { onDelete: "cascade" }),
 
     createdAt: timestamp("created_at").defaultNow().notNull(),
+
     updatedAt: timestamp("updated_at")
       .defaultNow()
       .notNull()
