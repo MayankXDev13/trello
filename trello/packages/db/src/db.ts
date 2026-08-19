@@ -1,9 +1,9 @@
-import 'dotenv/config';
+import "dotenv/config";
 
-import { drizzle } from 'drizzle-orm/postgres-js';
-import postgres from 'postgres';
+import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
 
-import * as schema from './schema';
+import * as schema from "./schema";
 
 const getEnvVariable = (name: string) => {
   const value = process.env[name];
@@ -15,6 +15,6 @@ const getEnvVariable = (name: string) => {
   return value;
 };
 
-export const client = postgres(getEnvVariable('DATABASE_URL'));
+export const client = postgres(getEnvVariable("DATABASE_URL"));
 
 export const db = (drizzle as any)({ client, schema });

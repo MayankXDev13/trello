@@ -1,6 +1,6 @@
-import 'dotenv/config';
+import "dotenv/config";
 
-import { defineConfig } from 'drizzle-kit';
+import { defineConfig } from "drizzle-kit";
 
 const getEnvVariable = (name: string) => {
   const value = process.env[name];
@@ -13,10 +13,10 @@ const getEnvVariable = (name: string) => {
 };
 
 export default defineConfig({
-  schema: './src/schema.ts',
-  out: './drizzle',
-  dialect: 'postgresql',
+  schema: "./src/schema.ts",
+  out: "./drizzle",
+  dialect: "postgresql",
   dbCredentials: {
-    url: getEnvVariable('DATABASE_URL'),
+    url: getEnvVariable("DATABASE_URL"),
   },
 });
