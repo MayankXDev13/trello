@@ -1,6 +1,11 @@
 import { Router } from "express";
 import { requireAuth } from "../../middlewares/auth";
-import { getMe, patchMe, deleteMe, getById } from "../../controllers/users/users.controller";
+import {
+  getMe,
+  patchMe,
+  deleteMe,
+  getById,
+} from "../../controllers/users/users.controller";
 
 const router = Router();
 

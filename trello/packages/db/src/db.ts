@@ -15,8 +15,6 @@ const getEnvVariable = (name: string) => {
   return value;
 };
 
-export const client = postgres(
-  getEnvVariable("DATABASE_URL")
-);
+export const client = postgres(getEnvVariable("DATABASE_URL"));
 
 export const db = (drizzle as any)({ client, schema });

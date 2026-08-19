@@ -13,6 +13,10 @@ router.delete("/:organizationId", requireAuth, ctrl.remove);
 router.get("/:organizationId/members", requireAuth, ctrl.listMembers);
 router.post("/:organizationId/members", requireAuth, ctrl.addMember);
 router.patch("/:organizationId/members/:userId", requireAuth, ctrl.patchMember);
-router.delete("/:organizationId/members/:userId", requireAuth, ctrl.removeMember);
+router.delete(
+  "/:organizationId/members/:userId",
+  requireAuth,
+  ctrl.removeMember,
+);
 
 export default router;
