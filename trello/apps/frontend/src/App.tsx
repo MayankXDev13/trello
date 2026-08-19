@@ -4,14 +4,14 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { APITester } from "./APITester";
-import "./index.css";
+} from '@/components/ui/card';
+import { APITester } from './APITester';
+import './index.css';
 
-import logo from "./logo.svg";
-import reactLogo from "./react.svg";
-import { Routes, Route, BrowserRouter } from "react-router";
-import Board from "./components/Board";
+import logo from './logo.svg';
+import reactLogo from './react.svg';
+import { Routes, Route, BrowserRouter } from 'react-router';
+import Board from './components/Board';
 
 export function App() {
   return (
